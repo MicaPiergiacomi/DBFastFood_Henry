@@ -138,7 +138,7 @@ Optimizar una base de datos para análisis externos y garantizar su sostenibilid
 Optimización para análisis externos:
 Realizar un diseño adecuado del esquema de la base de datos. Utilizar un diseño relacional que refleje correctamente la estructura de los datos. Normalizar la base de datos para reducir la redundancia y mejorar la integridad de los datos.
 
-## Garantizar la sostenibilidad a largo plazo:
+#### Garantizar la sostenibilidad a largo plazo
 Documentar la estructura de la base de datos y los procedimientos de mantenimiento. 
 
 ## Desafíos y soluciones
