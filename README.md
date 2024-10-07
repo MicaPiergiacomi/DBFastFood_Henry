@@ -20,7 +20,7 @@ Debido a la escasez de entradas en las tablas consideradas principales (Tablas O
 ¿Cuál es el tiempo promedio desde el despacho hasta la entrega de los pedidos por los mensajeros?
 A partir de la prompt realizada, se descubrió que el tiempo promedio de despacho a entrega de los pedidos por los mensajeros es 30 minutos. Se utilizó la sentencia DATADIFF en minutos para realizar la diferencia entre horarios de las columnas de la tabla Ordenes. 
 
-Prompt consulta 1 
+##### Prompt consulta 1 
 ```sql
 SELECT 
     AVG(DATEDIFF(minute, FechaDespacho, FechaEntrega)) AS TiempoPromedioEntrega 
@@ -32,9 +32,9 @@ FROM Ordenes;
 Las ventas realizadas de manera presencial fueron las que más ingresos atrajeron a la empresa por sobre otros canales de venta. 
 La consulta 2 fue realizada con el comando JOIN que permitió comparar datos de dos tablas, Ordenes, como principal, y OrigenesOrden. Se realizó la suma de cada venta por cada OrigenOrden, donde los resultados de las sumas de OrdenesOrigen de venta se pidió que ordene los resultados de manera descendiente, y para solo traer el OrigenOrden con mas ingresos se procede a llamar con un TOP 1
 
-Prompt consulta 2 
+##### Prompt consulta 2 
 ```sql
-	SELECT TOP 1 
+SELECT TOP 1 
 	OO.Descripcion,
 	SUM(O.TotalCompra) AS TotalCompraPorOrigen 
 FROM Ordenes AS O
@@ -48,7 +48,7 @@ ORDER BY TotalCompraPorOrigen DESC;
 Aclaración: que se consideró volumen de ventas promedio a un volumen de cantidad de órdenes, no de volumen de cantidad de dinero.
 El resultado de esta consulta reflejó que cada empleado realizó una única venta.
 
-Prompt consulta 3 
+##### Prompt consulta 3 
 ```sql
 SELECT 
 	E.Nombre AS Empleado,
@@ -63,7 +63,7 @@ ORDER BY VolumenVentas DESC;
 ¿Cómo varía la demanda de productos a lo largo del día? 
 La única orden que tiene productos asociados es la Nro.1 indicada en la tabla DetalleOrden, y por lo tanto los resultados están únicamente vinculados en el horario de la mañana. La cantidad de productos vendidos a la mañana es de 55.  
 
-Prompt consulta 4
+##### Prompt consulta 4
 ```sql
 SELECT 
 O.HorarioVenta,
@@ -77,7 +77,7 @@ GROUP BY O.HorarioVenta;
 ¿Cómo se comparan las ventas mensuales de este año con el año anterior?
 En el caso de esta consulta, todas las ventas realizadas por la empresa fueron  ejecutadas en el año 2023, por lo tanto no se puede comparar con el año anterior. Se realizó la comparación mes a mes de las ventas del 2023. Da como resultado que en el mes 9 se obtuvo el ingreso mayor. 
 
-Prompt consulta 5
+##### Prompt consulta 5
 ```sql
 SELECT YEAR(FechaOrdenTomada) AS periodoAnual, 
 	MONTH(fechaOrdenTomada) AS periodoMensual,
@@ -89,7 +89,8 @@ GROUP BY YEAR(FechaOrdenTomada), MONTH(FechaOrdenTomada);
 #### Consulta 6 Análisis de Fidelidad del Cliente
 ¿Qué porcentaje de clientes son recurrentes versus nuevos clientes cada mes? 
 En esta consulta se presenta un desafío, ya que en la tabla de Ordenes solo contiene una única entrada por cliente y con eso no se puede estimular el porcentaje de recurrencia de los mismos.
-Prompt consulta 6
+
+##### Prompt consulta 6
 ```sql
 SELECT 
 	C.Nombre,
@@ -106,7 +107,7 @@ Considerando la falta de entradas en las Tablas Ordenes y DetalleOrdenes, pero t
 Teniendo en cuenta que a la mañana se realizaron más ventas, ¿Cuáles fueron los productos más y menos vendidos ? 
 La siguiente búsqueda recopila los datos de la Tabla DetalleOrdenes y con un llamado a las tablas Productos y Ordenes. Nos indica a partir del ORDER BY de la columna demandaProductos con orden descendente, que el producto más vendido fueron los Brownies con 10 unidades vendidas y el menos vendido Hamburguesa Deluxe con 1 unidad vendida.
 
-Prompt consulta 7
+##### Prompt consulta 7
 ```sql
 SELECT 
 	P.Nombre AS Producto,
