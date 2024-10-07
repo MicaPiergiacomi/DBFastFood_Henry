@@ -21,9 +21,12 @@ Consulta 1: Eficiencia de los mensajeros:
 A partir de la prompt realizada, se descubrió que el tiempo promedio de despacho a entrega de los pedidos por los mensajeros es 30 minutos. Se utilizó la sentencia DATADIFF en minutos para realizar la diferencia entre horarios de las columnas de la tabla Ordenes. 
 
 Propmt consulta 1 
+```sql
+
 SELECT 
     AVG(DATEDIFF(minute, FechaDespacho, FechaEntrega)) AS TiempoPromedioEntrega 
 FROM Ordenes;
+```
 
 Consulta 2: Análisis de Ventas por Origen de Orden: 
  ¿Qué canal de ventas genera más ingresos?
@@ -31,13 +34,15 @@ Las ventas realizadas de manera presencial fueron las que más ingresos atrajero
 La consulta 2 fue realizada con el comando JOIN que permitió comparar datos de dos tablas, Ordenes, como principal, y OrigenesOrden. Se realizó la suma de cada venta por cada OrigenOrden, donde los resultados de las sumas de OrdenesOrigen de venta se pidió que ordene los resultados de manera descendiente, y para solo traer el OrigenOrden con mas ingresos se procede a llamar con un TOP 1
 
 Prompt consulta 2 
-SELECT TOP 1 
+```sql
+	SELECT TOP 1 
 	OO.Descripcion,
 	SUM(O.TotalCompra) AS TotalCompraPorOrigen 
 FROM Ordenes AS O
 INNER JOIN OrigenesOrden AS OO ON O.OrigenID = OO.OrigenID
 GROUP BY OO.Descripcion
 ORDER BY TotalCompraPorOrigen DESC;
+```
 
 Consulta 3: Productividad de los Empleados: 
 ¿Cuál es el volumen de ventas promedio gestionado por empleado?
