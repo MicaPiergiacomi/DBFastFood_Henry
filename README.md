@@ -12,6 +12,8 @@ En el cuarto avance, las consultas se tornaron más interesantes al considerar e
 ## Resultados y consultas
 El siguiente esquema relacional se desarrolló a partir de la creación de tablas donde se definieron los campos a analizar y se establecieron las relaciones entre tablas a partir de claves primarias y foráneas.
 
+![ER-](https://github.com/user-attachments/assets/24f24fcb-111d-4d84-a45b-05c84d6043e2)
+
 
 Debido a la escasez de entradas en las tablas consideradas principales (Tablas Ordenes y DetalleOrdenes) las consultas pueden tornarse poco relevantes. Aquí se presentan los resultados obtenidos de las siguientes consultas.
 
