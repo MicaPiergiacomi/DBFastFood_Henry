@@ -1,3 +1,5 @@
+# Descubriendo la base de datos Fast Food 🍔 🍟
+
 ## Introducción
 El presente informe representa un proyecto dedicado a la creación de una base de datos diseñada para garantizar la escalabilidad y eficiencia en la toma de decisiones. En este proyecto, se propuso desarrollar una base de datos que no solo sea capaz de almacenar el volúmen de información requerida, sino también de proporcionar acceso rápido y seguro a los datos relevantes para la toma de decisiones estratégicas. Con un enfoque en la escalabilidad, se busca asegurar que la base de datos pueda adaptarse y crecer junto con las necesidades cambiantes de la organización, sin comprometer su rendimiento.
 En las siguientes secciones, se detallarán los procesos y metodologías utilizados para diseñar, implementar y optimizar la base de datos, así como los resultados obtenidos y las recomendaciones para su uso continuo y mejora.
